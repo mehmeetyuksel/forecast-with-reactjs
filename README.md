@@ -1,5 +1,6 @@
 ## You can click to visit app <a href="https://forecast-with-reactjs.herokuapp.com/">Click</a>
 
+This app initially determines your city from your IP address and shows your city's 3 days forecast. After that, by using the search bar, you can get the 3 days forecast of any city you wish.
 
 # Getting Started with Create React App
 

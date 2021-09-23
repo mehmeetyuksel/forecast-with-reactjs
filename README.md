@@ -1,4 +1,4 @@
-## You can click to visit app <a href="https://forecast-with-reactjs.herokuapp.com/" >Click</a>
+## You can click to visit app <a href="https://forecast-with-reactjs.herokuapp.com/" target="_blank" >Click</a>
 
 
 # Getting Started with Create React App

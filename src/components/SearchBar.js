@@ -41,20 +41,23 @@ class SearchBar extends React.Component {
     handleKeyPress = async (e) => {
 
         if (e.key === "Enter") {
-            //console.log(e.target.value)
-            e.preventDefault();
-            const response = await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=28193ed4b743490692a92524212408&q=${e.target.value}&days=3`)
-            //console.log(response.data.location.name)
-            this.setState({
-                weather: response.data.forecast.forecastday,
-                localtime: response.data.location.localtime.split(" ")[1],
-                country: response.data.location.country,
-                city_value: response.data.location.name
-            })
-            e.target.value = "";
+           if(e.target.value === "") {alert("Enter a value"); e.preventDefault()}
+        
+        else {
+             //console.log(e.target.value)
+             e.preventDefault();
+             const response = await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=28193ed4b743490692a92524212408&q=${e.target.value}&days=3`)
+             //console.log(response.data.location.name)
+             this.setState({
+                 weather: response.data.forecast.forecastday,
+                 localtime: response.data.location.localtime.split(" ")[1],
+                 country: response.data.location.country,
+                 city_value: response.data.location.name
+             })
+             e.target.value = "";
         }
     }
-
+    }
 
     async componentDidMount() {
         const response = await fetch("https://ip-geo-location.p.rapidapi.com/ip/check?format=json", {

@@ -27,7 +27,7 @@ class SearchBar extends React.Component {
     }
 
     onChange = async (city_value) => {
-        const response = await axios.get(`http://api.weatherapi.com/v1/forecast.json?key=28193ed4b743490692a92524212408&q=${city_value}&days=3`)
+        const response = await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=28193ed4b743490692a92524212408&q=${city_value}&days=3`)
         //console.log(response.data.location.name)
         this.setState({
             weather: response.data.forecast.forecastday,
@@ -43,7 +43,7 @@ class SearchBar extends React.Component {
         if (e.key === "Enter") {
             //console.log(e.target.value)
             e.preventDefault();
-            const response = await axios.get(`http://api.weatherapi.com/v1/forecast.json?key=28193ed4b743490692a92524212408&q=${e.target.value}&days=3`)
+            const response = await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=28193ed4b743490692a92524212408&q=${e.target.value}&days=3`)
             //console.log(response.data.location.name)
             this.setState({
                 weather: response.data.forecast.forecastday,
@@ -74,7 +74,7 @@ class SearchBar extends React.Component {
         })
        // console.log(initial)
 
-        const response2 = await axios.get(`http://api.weatherapi.com/v1/forecast.json?key=28193ed4b743490692a92524212408&q=${this.state.city_value}&days=3`)
+        const response2 = await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=28193ed4b743490692a92524212408&q=${this.state.city_value}&days=3`)
 
         this.setState({
             weather: response2.data.forecast.forecastday,

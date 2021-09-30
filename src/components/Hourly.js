@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 class Hourly extends React.Component {
     state = {
         response: [],
+        city_data : "",
+        country_data: ""
 
     }
 
@@ -16,9 +18,10 @@ class Hourly extends React.Component {
         const response = await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=28193ed4b743490692a92524212408&q=${city_value}&days=3`)
         this.setState({
             response: response.data.forecast.forecastday[this.props.match.params.id].hour,
-
+            city_data : response.data.location.name,
+            country_data : response.data.location.country
         })
-        //console.log(response.data)
+    
         //console.log(response.data.forecast.forecastday[this.props.match.params.id].hour)
     }
     render() {
@@ -27,6 +30,7 @@ class Hourly extends React.Component {
 
             <div className="container">
                 <Link to="/"><button className="btn btn-primary btn-lg" style={{ display: "block", width: "100%", marginBottom: "10px" }}>Homepage</button> </Link>
+                <h2 className="text-center city-info">{this.state.city_data}, {this.state.country_data}</h2>
                 <div className="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
                     {this.state.response.map((time, i) => (
 

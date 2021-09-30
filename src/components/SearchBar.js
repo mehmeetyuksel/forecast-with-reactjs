@@ -78,7 +78,7 @@ class SearchBar extends React.Component {
        // console.log(initial)
 
         const response2 = await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=28193ed4b743490692a92524212408&q=${this.state.city_value}&days=3`)
-        console.log(response2.data)
+      //  console.log(response2.data)
         this.setState({
             weather: response2.data.forecast.forecastday,
             localtime: response2.data.location.localtime.split(" ")[1],

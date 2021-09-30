@@ -1,3 +1,12 @@
+a:hover {     
+  text-decoration: none; 
+  color : inherit
+}
+a {
+text-decoration: none;
+color : inherit
+}
+
 
 body {
     
@@ -33,7 +42,7 @@ body {
 }
 
 .search-button {
-    width: 12rem;
+    width: 9rem;
     height:3rem;
     background-color: silver;
     border: 2px solid lightseagreen;
@@ -83,4 +92,16 @@ body {
     transform: scale(1.15);
     z-index: 99;
     opacity: 0.98;
+}
+
+.hourly-gun-card {
+    opacity: 0.75;
+    border-radius: 15%;
+    transition: 1s all;
+}
+.hourly-gun-card:hover {
+    
+  transform: scale(1.05);
+  z-index: 99;
+  opacity: 0.98;
 }

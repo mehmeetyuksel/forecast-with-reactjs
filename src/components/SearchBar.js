@@ -68,7 +68,7 @@ class SearchBar extends React.Component {
             }
         })
         const initial = await response.json();
-        //console.log(initial.city.name)
+        //console.log(initial)
         this.setState({
             city_value: initial.city.name,
             country: initial.country.name,
@@ -78,7 +78,7 @@ class SearchBar extends React.Component {
        // console.log(initial)
 
         const response2 = await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=28193ed4b743490692a92524212408&q=${this.state.city_value}&days=3`)
-
+        console.log(response2.data)
         this.setState({
             weather: response2.data.forecast.forecastday,
             localtime: response2.data.location.localtime.split(" ")[1],
@@ -102,7 +102,7 @@ class SearchBar extends React.Component {
                 <form>
                     <input ref={textInput}  type="text" className="search-bar" placeholder="Write the city name to see its forecast" onFocus={(e) => { e.target.placeholder = "" }} onBlur={(e) => { e.target.placeholder = "Write the city name to see its forecast" }} onKeyPress={this.handleKeyPress} />
                 </form>
-                <button style={{ display: "block", margin: "1rem auto" }} className="search-button" onClick={this.onSubmit}><span>Look For It!</span></button>
+                <button style={{ display: "block", margin: "1rem auto" }} className="search-button" onClick={this.onSubmit}><span>Search!</span></button>
 
                 <DayList city={this.state.city_value} weather={this.state.weather} localtime={this.state.localtime} country={this.state.country} />
             </div> : <div></div>

@@ -2,6 +2,8 @@
 
 This app initially determines your city from your IP address and shows your city's 3 days forecast. After that, by using the search bar, you can get the 3 days forecast of any city you wish.
 
+With the new update "Make it better 4", hourly forecast can be gotten by clicking on any day.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
